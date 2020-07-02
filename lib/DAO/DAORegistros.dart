@@ -39,4 +39,14 @@ class DAORegistros {
     log("excluir executado");
     return r;
   }
+
+
+  static teste() async{
+    DAORegistros.inserir(Registro(motivo: 'teste1', valor: 10, ));
+    DAORegistros.inserir(Registro(motivo: 'teste2', valor: 11, ));
+    DAORegistros.inserir(Registro(motivo: 'teste3', valor: 12, ));
+    DAORegistros.inserir(Registro(motivo: 'teste4', valor: 13, ));
+    DAORegistros.inserir(Registro(motivo: 'teste5', valor: 14, ));
+    DAORegistros.inserir(Registro(motivo: 'teste6', valor: 15, ));
+  }
 }

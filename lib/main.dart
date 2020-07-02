@@ -7,5 +7,11 @@ void main() {
   final db = Db();
   db.incializaDb();
 
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, routes: routes));
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      routes: routes,
+      initialRoute: '/',
+    ),
+  );
 }
