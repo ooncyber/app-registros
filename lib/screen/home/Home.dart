@@ -1,16 +1,9 @@
-import 'package:app_lista_conta/DAO/DAORegistros.dart';
-import 'package:app_lista_conta/Db/Db.dart';
-import 'package:app_lista_conta/helpers/data.dart';
-import 'package:app_lista_conta/model/Registro.dart';
-import 'package:app_lista_conta/screen/components/cabecalhoHome.dart';
-import 'package:app_lista_conta/screen/components/listaHome.dart';
 import 'package:app_lista_conta/screen/components/pesquisaHome.dart';
 import 'package:app_lista_conta/screen/home/HomeController.dart';
 import 'package:app_lista_conta/screen/home/Listagem.dart';
 import 'package:app_lista_conta/screen/home/informacoes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:mobx/mobx.dart';
 
 class Home extends StatelessWidget {
   final con = HomeController();

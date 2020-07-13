@@ -1,7 +1,7 @@
 import 'package:app_lista_conta/DAO/DAORegistros.dart';
 import 'package:app_lista_conta/helpers/data.dart';
 import 'package:app_lista_conta/model/Registro.dart';
-import 'package:app_lista_conta/screen/adicionar/components/textfield.dart';
+import 'package:app_lista_conta/screen/components/textFieldAdicionar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -76,8 +76,8 @@ class Adicionar extends StatelessWidget {
         body: Column(
           children: <Widget>[
             Container(margin: EdgeInsets.only(top: 12), child: Text(con.data)),
-            textField(con.motivo, "Motivo"),
-            textField(con.valor, "Valor", icon: Icons.attach_money),
+            textFieldAdicionar(con.motivo, "Motivo"),
+            textFieldAdicionar(con.valor, "Valor", icon: Icons.attach_money),
             InkWell(
               onTap: () {
                 con.futuro = !con.futuro;

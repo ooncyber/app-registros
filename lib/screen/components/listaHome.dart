@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:app_lista_conta/DAO/DAORegistros.dart';
+import 'package:app_lista_conta/screen/components/boxDecoration.dart';
 import 'package:app_lista_conta/screen/home/HomeController.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -15,12 +18,7 @@ Widget listaHome(HomeController con) => Observer(
                   Container(
                       padding: EdgeInsets.all(5),
                       margin: EdgeInsets.only(top: 10, bottom: 5),
-                      decoration: BoxDecoration(
-                        color: Colors.blue[900],
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15.0),
-                        ),
-                      ),
+                      decoration: boxDecoration(cor: Colors.blue[900], borda: 50.0),
                       child: Text(
                         con.filtrados[index].data,
                         style: TextStyle(color: Colors.white),

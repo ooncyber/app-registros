@@ -34,4 +34,16 @@ abstract class _HomeControllerBase with Store {
       number += element.valor;
     });
   }
+
+  @observable
+  var listaInformacoes = List();
+
+  buscaDados() async {
+    var dados = await DAORegistros.listar();
+    for (var i = 0; i < dados.length; i++) {
+      
+    }
+    lista.add({"cor": element.cor, "valor": element.valor});
+    listaInformacoes = lista;
+  }
 }

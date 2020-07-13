@@ -84,6 +84,22 @@ mixin _$HomeController on _HomeControllerBase, Store {
     });
   }
 
+  final _$listaInformacoesAtom =
+      Atom(name: '_HomeControllerBase.listaInformacoes');
+
+  @override
+  List<dynamic> get listaInformacoes {
+    _$listaInformacoesAtom.reportRead();
+    return super.listaInformacoes;
+  }
+
+  @override
+  set listaInformacoes(List<dynamic> value) {
+    _$listaInformacoesAtom.reportWrite(value, super.listaInformacoes, () {
+      super.listaInformacoes = value;
+    });
+  }
+
   @override
   String toString() {
     return '''
@@ -91,7 +107,8 @@ search: ${search},
 number: ${number},
 valor: ${valor},
 filtrados: ${filtrados},
-l: ${l}
+l: ${l},
+listaInformacoes: ${listaInformacoes}
     ''';
   }
 }
