@@ -20,14 +20,19 @@ Widget informacoes(HomeController con) {
       ),
       Expanded(
         child: Observer(builder: (_) {
-          // print(con.listaInformacoes);
           return ListView.builder(
               itemCount: con.listaInformacoes.length,
               itemBuilder: (context, index) {
                 return Container(
                   margin: EdgeInsets.only(bottom: 5),
-                  color: Colors.green,
-                  child: ListTile(title: Text("R\$ ${con.listaInformacoes[index]['cor']}")),
+                  color: Color(
+                    int.parse(
+                      con.listaInformacoes[index]['cor'],
+                    ),
+                  ),
+                  child: ListTile(
+                      title:
+                          Text("R\$ ${con.listaInformacoes[index]['total']}")),
                 );
               });
         }),

@@ -33,6 +33,13 @@ class DAORegistros {
     return f;
   }
 
+  static Future<List> listarInformacoes() async{
+    Database db = await Db.db;
+    var s = await db.rawQuery('SELECT cor, SUM(valor) as total from ${Db.DB_TABLE} group by cor');
+    return s.toList();
+
+  }
+
   static Future<int> excluir(Registro reg) async {
     Database db = await Db.db;
     int r = await db.delete(Db.DB_TABLE, where: "ID=${reg.id}");

@@ -8,24 +8,29 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 
 Widget listaHome(HomeController con) => Observer(
       builder: (_) {
+        var dataAnterior = '';
         return ListView.builder(
             itemCount: con.filtrados.length,
             itemBuilder: (context, index) {
               if (!con.filtrados[index].visivel) return SizedBox();
-
-              return Column(
+              var rest = Column(
                 children: <Widget>[
-                  Container(
-                      padding: EdgeInsets.all(5),
-                      margin: EdgeInsets.only(top: 10, bottom: 5),
-                      decoration: boxDecoration(cor: Colors.blue[900], borda: 50.0),
-                      child: Text(
-                        con.filtrados[index].data,
-                        style: TextStyle(color: Colors.white),
-                      )),
+                  dataAnterior == con.filtrados[index].data
+                      ? SizedBox()
+                      : Container(
+                          padding: EdgeInsets.all(5),
+                          margin: EdgeInsets.only(top: 10, bottom: 5),
+                          decoration:
+                              boxDecoration(cor: Colors.blue[900], borda: 50.0),
+                          child: Text(
+                            con.filtrados[index].data,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
                   Observer(builder: (_) {
                     return InkWell(
                       child: Container(
+                        margin: EdgeInsets.only(top: 5),
                         color: Color(int.parse(con.filtrados[index].cor ??
                             Colors.white.value.toString())),
                         child: ListTile(
@@ -61,6 +66,8 @@ Widget listaHome(HomeController con) => Observer(
                   }),
                 ],
               );
+              dataAnterior = con.filtrados[index].data;
+              return rest;
             });
       },
     );

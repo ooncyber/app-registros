@@ -57,13 +57,13 @@ mixin _$HomeController on _HomeControllerBase, Store {
   final _$filtradosAtom = Atom(name: '_HomeControllerBase.filtrados');
 
   @override
-  List<dynamic> get filtrados {
+  List<Registro> get filtrados {
     _$filtradosAtom.reportRead();
     return super.filtrados;
   }
 
   @override
-  set filtrados(List<dynamic> value) {
+  set filtrados(List<Registro> value) {
     _$filtradosAtom.reportWrite(value, super.filtrados, () {
       super.filtrados = value;
     });

@@ -112,6 +112,7 @@ class Adicionar extends StatelessWidget {
                         pickerColor: Colors.white,
                         onColorChanged: (color) {
                           con.cor = color;
+                          Navigator.pop(context);
                         },
                       ),
                     ),

@@ -16,7 +16,8 @@ class Db {
             motivo TEXT,
             valor NUMERIC(18,0),
             futuro bit,
-            cor TEXT)
+            cor TEXT,
+            destino TEXT)
             ''');
       log("---DB CRIADO---");
     });
@@ -24,6 +25,7 @@ class Db {
 
   deletaDb() {
     deleteDatabase(DB_NAME);
+    log("Db deletado");
   }
   
 }

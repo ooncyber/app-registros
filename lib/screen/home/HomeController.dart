@@ -17,7 +17,7 @@ abstract class _HomeControllerBase with Store {
   var valor = TextEditingController();
 
   @observable
-  List filtrados = List();
+  List<Registro> filtrados = [];
 
   @observable
   List<Registro> l = [];
@@ -39,11 +39,7 @@ abstract class _HomeControllerBase with Store {
   var listaInformacoes = List();
 
   buscaDados() async {
-    var dados = await DAORegistros.listar();
-    for (var i = 0; i < dados.length; i++) {
-      
-    }
-    lista.add({"cor": element.cor, "valor": element.valor});
-    listaInformacoes = lista;
+    var dados = await DAORegistros.listarInformacoes();
+    listaInformacoes = dados;
   }
 }
